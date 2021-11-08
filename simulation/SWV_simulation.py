@@ -1,27 +1,13 @@
 # noinspection PyUnresolvedReferences
 import PyESP
-
 import enum
 
 
 class Technique(enum.Enum):
-    mode_CV = 0
     mode_SWV = 1
-    mode_CA = 2
-    mode_SDC = 3
 
     def __int__(self):
         return self.value
-
-
-class IR_mode(enum.Enum):
-    ir_none = 0
-    ir_ru = 1
-    ir_dl = 2
-
-    def __int__(self):
-        return self.value
-
 
 def simulate(cfg):
     PyESP.setup()

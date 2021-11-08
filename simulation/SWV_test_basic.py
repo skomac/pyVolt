@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import matplotlib.pyplot as plt
 import csv
 import json
+# noinspection PyPep8Naming
 import SWV_simulation as swv
 
 with open("peak_basic.json", "r") as sim_config_file:
