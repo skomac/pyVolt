@@ -4,7 +4,7 @@ import json
 # noinspection PyPep8Naming
 import SWV_simulation as swv
 
-with open("peak_basic.json", "r") as sim_config_file:
+with open("config/peak_basic.json", "r") as sim_config_file:
     config = json.load(sim_config_file)
 
 [potential, current] = swv.simulate(config)
