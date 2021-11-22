@@ -1,6 +1,8 @@
 # noinspection PyUnresolvedReferences
 import PyESP
 import enum
+import numpy as np
+import json
 
 
 class Technique(enum.Enum):
@@ -8,6 +10,7 @@ class Technique(enum.Enum):
 
     def __int__(self):
         return self.value
+
 
 def simulate(cfg):
     PyESP.setup()
@@ -24,6 +27,7 @@ def simulate(cfg):
                             cfg["rate_constant"], cfg["charge_transfer_coefficient"])
     # run simulation
     [potential, current] = PyESP.simulate()
+
     # free memory --> temporary approach (might not even be necessary...)
     PyESP.destroy()
 
@@ -34,4 +38,16 @@ def simulate(cfg):
             result_potential.append((potential[i] + potential[i - 1]) / 2.0)
             result_current.append(current[i] - current[i - 1])
 
-    return [result_potential, result_current]
+    return np.array([result_potential, result_current])
+
+
+def simulate_from_json(json_config):
+    with open('../simulation/config/peak_basic.json', "r") as sim_config_file:
+        config = json.load(sim_config_file)
+    with open(json_config, "r") as sim_config_file:
+        changes = json.load(sim_config_file)
+
+    for k, v in changes.items():
+        config[k] = v
+
+    return simulate(config)

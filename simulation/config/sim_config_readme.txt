@@ -6,7 +6,7 @@ step_potential = 0.001  # V
 SWV_frequency = 5.  # Hz
 SWV_pulse_height = 25  # mV
 
-//#experimental variables
+// experimental variables
 initial_potential = -500  # mV
 final_potential = 500  # mV
 equilibration_potential = -500  # mV
