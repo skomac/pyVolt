@@ -1,5 +1,5 @@
 from utils.plot import Plot
-from utils.filesystem import save_csv
+from utils.filesystem import save_csv, write_to_file
 import simulation.swv_simulation as swv
 import numpy as np
 
@@ -14,7 +14,8 @@ def simulate_var_redox_potential():
         new_plot.add_plot(results, str(200*(n-2))+" mV")
         maxima_positions.append(results[0][np.argmax(results[1])])
 
-    print(maxima_positions)
+    info = f"Maxima positions (should be -0.2, 0.0, +0.2):\n{maxima_positions}"
+    write_to_file("../results/simulation/var_redox_potential/results.txt", info)
 
     new_plot.save('../results/simulation/var_redox_potential/swv_curve_var_redox_potential.png')
 

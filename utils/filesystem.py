@@ -31,3 +31,9 @@ def load_csv(filename, header_count=1):
                 results.append([float(row[0]), float(row[1])])
             line_count = line_count + 1
     return np.transpose(np.array(results))
+
+
+def write_to_file(filename, string):
+    f = open(filename, "w")
+    f.write(string)
+    f.close()
