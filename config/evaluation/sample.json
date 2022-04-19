@@ -1,0 +1,15 @@
+{
+  "name": "sample_name_of_signal_recovery_evaluation",
+  "initial_data": [
+    "sample_name_of_test_suite"
+  ],
+  "preprocessing_instructions": [
+    [
+      "SAVITZKY_GOLAY",
+      31,
+      2
+    ]
+  ],
+  "eval_type": "RMSE",
+  "eval_config": "nothing.json"
+}

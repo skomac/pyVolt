@@ -1,0 +1,33 @@
+{
+  "name": "ml_sample_dataset_1",
+  "amount_of_curves": 1000,
+  "potential_range": [
+    -500,
+    500,
+    1
+  ],
+  "shape": [
+    {
+      "base_peak": "var_no_of_electrons/swv_curve_1_electron",
+      "position": -150,
+      "height": 3,
+      "height_stderr_fraction": 0.01
+    },
+    {
+      "base_peak": "var_no_of_electrons/swv_curve_2_electron",
+      "position": 150,
+      "height": 2.96,
+      "height_stderr_fraction": 0.01
+    }
+  ],
+  "noise_fraction": 0.04,
+  "baseline": {
+    "type": "DOUBLE_POWER",
+    "params": [
+      0.6506,
+      5.957,
+      3.717,
+      1.000
+    ]
+  }
+}

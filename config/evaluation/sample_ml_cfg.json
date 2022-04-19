@@ -1,0 +1,4 @@
+{
+  "algorithm": "LOGISTIC_REGRESSION",
+  "training_curves_percent": 50
+}
