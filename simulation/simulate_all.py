@@ -2,6 +2,7 @@ from simulation.swv_test_basic import simulate_basic
 from simulation.swv_test_var_initial_concentration import simulate_var_initial_concentration
 from simulation.swv_test_var_redox_potential import simulate_var_redox_potential
 from simulation.swv_test_var_no_of_electrons import simulate_var_no_of_electrons
+from simulation.swv_test_visualize import simulate_visual
 
 
 def simulate_all():
@@ -9,6 +10,7 @@ def simulate_all():
     simulate_var_no_of_electrons()
     simulate_var_redox_potential()
     simulate_var_initial_concentration()
+    simulate_visual()
 
 
 if __name__ == '__main__':

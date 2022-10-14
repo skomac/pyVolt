@@ -4,6 +4,8 @@ from pathlib import Path
 
 import numpy as np
 
+from results.results import results_prep_dir
+
 
 def ensure_dir_creation(filepath):
     directory = os.path.dirname(filepath)
@@ -84,3 +86,12 @@ def load_csv_dict(filename, header_count=0):
 def write_to_file(filename, string):
     with open(filename, "w") as f:
         f.write(string)
+
+
+def load_prepared_samples(suite_name):
+    return {
+        "unmodified": load_csv_plot(f"{results_prep_dir}/{suite_name}/{suite_name}_raw"),
+        "signal": load_csv_plot(f"{results_prep_dir}/{suite_name}/{suite_name}_0"),
+        "baseline": load_csv_plot(f"{results_prep_dir}/{suite_name}/{suite_name}_baseline"),
+        "noise": load_csv_plot(f"{results_prep_dir}/{suite_name}/{suite_name}_noise"),
+    }

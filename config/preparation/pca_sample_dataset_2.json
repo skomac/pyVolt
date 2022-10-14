@@ -1,6 +1,6 @@
 {
   "name": "pca_sample_dataset_2",
-  "amount_of_curves": 40,
+  "amount_of_curves": 15,
   "potential_range": [
     -500,
     500,
@@ -8,16 +8,16 @@
   ],
   "shape": [
     {
-      "base_peak": "var_no_of_electrons/swv_curve_2_electron",
-      "position": 200,
-      "height": 3,
-      "height_stderr_fraction": 0.01
+      "base_peak": "var_no_of_electrons/swv_curve_3_electron",
+      "position": -50,
+      "height": 15,
+      "height_stderr_fraction": 0.02
     },
     {
-      "base_peak": "var_no_of_electrons/swv_curve_2_electron",
-      "position": -50,
-      "height": 1.5,
-      "height_stderr_fraction": 0.01
+      "base_peak": "var_no_of_electrons/swv_curve_1_electron",
+      "position": 200,
+      "height": 30,
+      "height_stderr_fraction": 0.02
     }
   ],
   "noise_fraction": 0.04,
@@ -27,7 +27,7 @@
       0.6506,
       5.957,
       3.717,
-      1.000
+      0.700
     ]
   }
 }

@@ -25,10 +25,10 @@ def sample_baseline_correction():
         ]
     ]
 
-    preprocessed = preprocess_all(data, preprocessing_instructions)
+    preprocessed = preprocess_all(data, preprocessing_instructions, "baseline")
 
     plot = Plot()
-    polynomial_baseline_correction(data, preprocessing_instructions, plot)
+    polynomial_baseline_correction(data, preprocessing_instructions[0], plot)
     plot.show()
 
 

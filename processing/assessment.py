@@ -17,4 +17,4 @@ def signal_recovery(signal_ideal, signal_noisy, signal_filtered):
 
 
 def rmse(signal_ideal, signal_noisy):
-    return residual_num(signal_ideal, signal_noisy) / np.size(signal_ideal, 1)
+    return residual_num(signal_ideal, signal_noisy) / np.sqrt(np.size(signal_ideal[1]))

@@ -1,0 +1,18 @@
+{
+  "name": "SG_PLbase_onlyPL_hard_PCA",
+  "initial_data": [
+    "ml_sample_dataset_0",
+    "ml_sample_dataset_1",
+    "ml_sample_dataset_2"
+  ],
+  "preprocessing_instructions": [
+    [
+      "POLYNOMIAL_BASELINE",
+      0.2,
+      0.8,
+      3
+    ]
+  ],
+  "eval_type": "PCA_ASSESSMENT",
+  "eval_config": "sample_ml_pca_cfg.json"
+}

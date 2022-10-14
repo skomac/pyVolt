@@ -1,4 +1,5 @@
 import numpy as np
+import sklearn
 
 
 def get_gram_polynomial(m, k):
@@ -21,13 +22,19 @@ def get_gram_polynomial(m, k):
 
 
 def average_to_reduce(data, target_no_points):
-    length = np.size(data)
+    current_data = data[1]
+    length = np.size(current_data)
     new_points = np.linspace(0, length, target_no_points+1)
     new_points = np.floor(new_points)
 
     new_data = []
 
     for pointA, pointB in zip(new_points[0:np.size(new_points)-1], new_points[1:]):
-        new_data.append(np.average(data[int(pointA):int(pointB)]))
+        new_data.append(np.average(current_data[int(pointA):int(pointB)]))
 
-    return np.array(new_data)
+    return np.array([np.arange(0, target_no_points), new_data])
+
+
+def normalize(curve):
+    curve[1] = sklearn.preprocessing.normalize(np.array([curve[1]]))[0]
+    return curve

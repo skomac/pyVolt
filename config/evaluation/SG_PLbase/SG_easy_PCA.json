@@ -1,0 +1,17 @@
+{
+  "name": "SG_PLbase_onlySG_easy_PCA",
+  "initial_data": [
+    "pca_sample_dataset_0",
+    "pca_sample_dataset_1",
+    "pca_sample_dataset_2"
+  ],
+  "preprocessing_instructions": [
+    [
+      "SAVITZKY_GOLAY",
+      31,
+      2
+    ]
+  ],
+  "eval_type": "PCA_ASSESSMENT",
+  "eval_config": "sample_ml_pca_cfg.json"
+}

@@ -14,7 +14,7 @@ class Technique(enum.Enum):
         return self.value
 
 
-def simulate(cfg):
+def simulate(cfg, useful_format=True):
     PyESP.setup()
     PyESP.set_params(IP=cfg["initial_potential"], FP=cfg["final_potential"])  # initial and final potential
     PyESP.set_params(SI=int(cfg["step_potential"] * 1000.))  # Scan Increment (mV)
@@ -33,17 +33,20 @@ def simulate(cfg):
     # from PyESP: free memory --> temporary approach (might not even be necessary...)
     PyESP.destroy()
 
+    if not useful_format:
+        return np.array([(1000.*np.array(potential[:-2])), current[:-2]])
+
     result_potential = []
     result_current = []
     for i in range(1, len(potential) - 1):
         if potential[i] - potential[i - 1] < - cfg["SWV_pulse_height"] * 1.999 * 0.001:
             result_potential.append((potential[i] + potential[i - 1]) / 2.0 * 1000)
-            result_current.append(current[i] - current[i - 1])
+            result_current.append((current[i] - current[i - 1])) #*1e6
 
     return np.array([result_potential, result_current])
 
 
-def simulate_from_json(json_config):
+def simulate_from_json(json_config, useful_format=True):
     with open(f'{cfg_sim_dir}/peak_basic.json', "r") as config_file:
         config = json.load(config_file)
     with open(json_config, "r") as sim_config_file:
@@ -52,4 +55,4 @@ def simulate_from_json(json_config):
     for k, v in changes.items():
         config[k] = v
 
-    return simulate(config)
+    return simulate(config, useful_format)

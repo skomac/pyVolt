@@ -10,7 +10,8 @@ def simulate_basic():
 
     save_csv_plot(results, f'{results_sim_dir}/basic/swv_curve.csv')
 
-    new_plot = Plot()
+    results[1] = results[1] * 1.0e6
+    new_plot = Plot(figsize=[4.8, 3.6])
     new_plot.add_plot(results, 'Basic peak')
     new_plot.save(f'{results_sim_dir}/basic/swv_curve.png')
 

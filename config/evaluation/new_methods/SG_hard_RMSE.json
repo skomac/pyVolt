@@ -1,0 +1,17 @@
+{
+  "name": "CPPL_onlySG_hard_RMSE",
+  "initial_data": [
+    "ml_sample_dataset_0",
+    "ml_sample_dataset_1",
+    "ml_sample_dataset_2"
+  ],
+  "preprocessing_instructions": [
+    [
+      "SAVITZKY_GOLAY",
+      31,
+      2
+    ]
+  ],
+  "eval_type": "RMSE",
+  "eval_config": "nothing.json"
+}

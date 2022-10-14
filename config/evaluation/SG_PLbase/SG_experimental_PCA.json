@@ -1,0 +1,15 @@
+{
+  "name": "SG_PLbase_onlySG_experimental_PCA",
+  "initial_data": [
+    "experimental"
+  ],
+  "preprocessing_instructions": [
+    [
+      "SAVITZKY_GOLAY",
+      13,
+      2
+    ]
+  ],
+  "eval_type": "PCA_ASSESSMENT",
+  "eval_config": "sample_ml_pca_cfg.json"
+}

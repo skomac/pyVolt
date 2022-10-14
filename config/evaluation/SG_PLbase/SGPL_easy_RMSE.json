@@ -1,0 +1,23 @@
+{
+  "name": "SG_PLbase_SGPL_easy_RMSE",
+  "initial_data": [
+    "pca_sample_dataset_0",
+    "pca_sample_dataset_1",
+    "pca_sample_dataset_2"
+  ],
+  "preprocessing_instructions": [
+    [
+      "SAVITZKY_GOLAY",
+      31,
+      2
+    ],
+    [
+      "POLYNOMIAL_BASELINE",
+      0.2,
+      0.8,
+      3
+    ]
+  ],
+  "eval_type": "RMSE",
+  "eval_config": "nothing.json"
+}
